@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class item(models.Model):
-    itemname = models.CharField(max_length=255,blank=True, null=True)
+    itemname = models.CharField(max_length=550,blank=True, null=True)
     slug = models.CharField(max_length=255, blank=True, null=True)
     photo = models.ImageField(upload_to='', blank=True, null=True)
     category = models.CharField(max_length=225)
@@ -27,9 +27,15 @@ class invoicedetail(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.customer
+
 class invoiceitem(models.Model):
     invoice = models.ForeignKey(invoicedetail, on_delete=models.CASCADE)
-    item = models.CharField(max_length=100, blank=True, null=True)
+    item = models.ForeignKey(item, on_delete=models.CASCADE)
     qty = models.PositiveIntegerField(default=1)
     price = models.PositiveIntegerField(default=0)
     subtotal = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.item

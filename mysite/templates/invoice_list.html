@@ -1,0 +1,17 @@
+<!-- product_list.html -->
+{% extends "index.html" %}
+
+
+{% block content %}
+    <div class="card mt-30">
+        <div class="card-header card-header-secondary">
+            <h4 class="card-title">Products</h4>
+            <a href="{% url 'myapp:create_invoice' %}">Add more products</a>
+        </div>
+        <ul>
+            {% for i in invoice %}
+                <li class="card-body">{{ i.id }}|{{ i.customer}} | <a href="{% url 'myapp:update_invoice' i.id%}">Edit</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
