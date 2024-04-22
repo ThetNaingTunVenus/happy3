@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<form enctype="multipart/form-data" class="container" method="post" id="product_form">
+<form enctype="multipart/form-data" class="container-fluid" method="post" id="product_form">
     {% csrf_token %}
     <!-- main form start --- in our case product form -->
     <div class="card">
@@ -52,7 +52,7 @@
         </script>
         <div class="table-responsive card mt-4">
             <div class="card-header card-header-secondary">
-                <h4 class="card-title">Add Variants</h4>
+                <h4 class="card-title">Add Item</h4>
             </div>
             <table class="table card-header">
                 <thead class="text-secondary">
@@ -61,7 +61,7 @@
                     <th>Price <span style="color: red;" class="required">*</span></th>
                     <th>Subtotal <span style="color: red;" class="required">*</span></th>
                     <th>Delete?</th>
-                    <th>Custom Delete btn</th>
+                    <th>Delete btn</th>
                 </thead>
                 <tbody id="item-variants">  <!-- id="item-inlineformsetname" -->
                     <!-- formset non forms errors -->

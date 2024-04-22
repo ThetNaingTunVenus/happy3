@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class item(models.Model):
-    itemname = models.CharField(max_length=550,blank=True, null=True)
+    itemname = models.CharField(max_length=255,blank=True, null=True)
     slug = models.CharField(max_length=255, blank=True, null=True)
     photo = models.ImageField(upload_to='', blank=True, null=True)
     category = models.CharField(max_length=225)

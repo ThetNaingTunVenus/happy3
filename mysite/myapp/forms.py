@@ -4,7 +4,7 @@ from .models import *
 class invoicedetailform(forms.ModelForm):
     class Meta:
         model = invoicedetail
-        fields = '__all__'
+        fields = ['customer']
         # widgets = {
 
 class invoiceitemform(forms.ModelForm):
@@ -12,7 +12,7 @@ class invoiceitemform(forms.ModelForm):
         model = invoiceitem
         fields = '__all__'
         widgets = {
-            'item':forms.Select(attrs={'class':' itemselect', 'width':'300px'}),
+            'item':forms.Select(attrs={'class':' itemselect col-md-8'}),
         }
 
 
